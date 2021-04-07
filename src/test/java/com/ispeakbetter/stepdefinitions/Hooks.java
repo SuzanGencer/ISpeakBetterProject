@@ -13,6 +13,6 @@ public class Hooks {
 
     @After
     public void end() {
-        BasePage.tearDowm();
+        BasePage.tearDown();
     }
 }

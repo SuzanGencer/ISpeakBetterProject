@@ -7,6 +7,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import static com.ispeakbetter.base.BasePage.driver;
 
 public class HelperMethods {
+
     public static void sendText(WebElement element, String text) {
         try {
             element.clear();
@@ -62,7 +63,7 @@ public class HelperMethods {
     }
 
     public static WebDriverWait getWaitObject() {
-        return new WebDriverWait (driver, Constants.EXPLICIT_WAIT_TIME);
+        return new WebDriverWait(driver, Constants.EXPLICIT_WAIT_TIME);
     }
 
     public static void waitForVisibility(WebElement element) {
