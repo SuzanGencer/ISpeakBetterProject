@@ -1,11 +1,16 @@
 package com.ispeakbetter.base;
 
+import com.ispeakbetter.pages.LoginPage;
+import com.ispeakbetter.pages.StudentPage;
+
 public class PageManager {
-    //TO DO:
+    public static LoginPage loginPage;
+    public static StudentPage studentPage;
 
 
     public static void initialize(){
-        //TO DO: initialize all pages
+        loginPage = new LoginPage();
+        studentPage = new StudentPage();
 
     }
 
