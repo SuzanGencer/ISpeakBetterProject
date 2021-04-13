@@ -91,4 +91,8 @@ public class HelperMethods {
         JavascriptExecutor js = ((JavascriptExecutor) driver);
         js.executeScript("scroll(0, 500);");
     }
+    public static void specific2ScrollPageDown() {
+        JavascriptExecutor js = ((JavascriptExecutor) driver);
+        js.executeScript("scroll(0, 750);");
+    }
 }

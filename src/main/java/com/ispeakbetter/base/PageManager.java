@@ -13,6 +13,7 @@ public class PageManager {
 
 
 
+
     public static void initialize(){
         loginPage = new LoginPage();
         studentPage = new StudentPage();
