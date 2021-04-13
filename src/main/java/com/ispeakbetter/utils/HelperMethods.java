@@ -1,8 +1,12 @@
 package com.ispeakbetter.utils;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.util.ArrayList;
+import java.util.Set;
 
 import static com.ispeakbetter.base.BasePage.driver;
 
@@ -72,5 +76,19 @@ public class HelperMethods {
 
     public static void waitForClickability(WebElement element) {
         getWaitObject().until(ExpectedConditions.elementToBeClickable(element));
+    }
+
+    public static void windowHandles(){
+        System.out.println(driver.getWindowHandles());
+        Set<String> windowHandles = driver.getWindowHandles();
+        ArrayList<String> windowHandleList = new ArrayList<String>(windowHandles);
+        String parentWindow = windowHandleList.get(0);
+        String newWindow = windowHandleList.get(1);
+        driver.switchTo().window(newWindow);
+    }
+
+    public static void specificScrollPageDown() {
+        JavascriptExecutor js = ((JavascriptExecutor) driver);
+        js.executeScript("scroll(0, 500);");
     }
 }

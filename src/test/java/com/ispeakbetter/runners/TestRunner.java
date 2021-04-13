@@ -11,7 +11,9 @@ import org.junit.runner.RunWith;
                 "json:target/cucumber-html-reports/cucumber.json",
                 "junit:target/cucumber-xml-reports/cucumber.xml"},
         features = {"src/test/resources/features"},
-        glue = {"com/ispeakbetter/stepdefinitions"}
+        glue = {"com/ispeakbetter/stepdefinitions"},
+        tags = "@About or @Course"
+
 )
 public class TestRunner {
 }
