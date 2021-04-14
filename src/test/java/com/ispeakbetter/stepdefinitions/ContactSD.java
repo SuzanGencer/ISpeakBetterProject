@@ -18,10 +18,10 @@ public class ContactSD {
     public void clickContactP(){
         ContactPage.clickContactPage();
     }
-    @Then("Check Contact page title")
-    public void title(){
-        String expectedTitle = "İngilizceyi akıcı konuşabilmek için bizimle iletişime geçin.";
-        Assert.assertEquals(expectedTitle, ContactPage.verifyTitle());
+    @Then("Check Contact page verify url")
+    public void contactPageURL(){
+        String expectedURL = "https://ispeakbetter.com/contact";
+        Assert.assertEquals(expectedURL, ContactPage.verifyURL());
     }
 
     @Given("I go the Contact page")
