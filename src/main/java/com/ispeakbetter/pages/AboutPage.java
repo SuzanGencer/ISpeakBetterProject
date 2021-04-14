@@ -17,6 +17,9 @@ public class AboutPage {
     @FindBy(xpath = "//*[@id='container']/h1/yt-formatted-string")
     public static WebElement title;
 
+    @FindBy(xpath = "//*[@id='yDmH0d']/c-wiz/div/div/div[2]/div[1]/div[4]/form/div[1]/div/button/div[2]")
+    public static WebElement accept;
+
     public AboutPage() {
         PageFactory.initElements(driver,this);
     }
@@ -32,11 +35,15 @@ public class AboutPage {
     public static void clickLearningSystemLink(){
         HelperMethods.specificScrollPageDown();
         HelperMethods.waitForClickability(learningSystemLink);
+        HelperMethods.waitForClickability(learningSystemLink);
         HelperMethods.doClick(learningSystemLink);
     }
 
-    public static void openYouTube(){
+    public static String openYouTube(){
         HelperMethods.windowHandles();
+        HelperMethods.doClick(accept);
+        return HelperMethods.getCurrentURL();
+
 
     }
 }

@@ -43,9 +43,10 @@ public class AboutSD {
 
     @Then("YouTube video opened")
     public void youtubeVideoOpened() {
-       AboutPage.openYouTube();
-        String expectedURL = "https://consent.youtube.com/m?continue=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DDnlaXucYWKw%26t%3D8s&gl=DE&m=0&pc=yt&uxe=23983172&hl=de&src=1";
-        Assert.assertEquals(expectedURL,HelperMethods.getCurrentURL());
+
+       String expectedURL = "https://www.youtube.com/watch?v=DnlaXucYWKw&t=8s";
+       Assert.assertEquals(expectedURL,AboutPage.openYouTube());
+
 
     }
 }
