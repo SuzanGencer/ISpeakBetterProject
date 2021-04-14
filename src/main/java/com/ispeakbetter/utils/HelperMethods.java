@@ -3,9 +3,11 @@ package com.ispeakbetter.utils;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 import static com.ispeakbetter.base.BasePage.driver;
@@ -77,7 +79,6 @@ public class HelperMethods {
     public static void waitForClickability(WebElement element) {
         getWaitObject().until(ExpectedConditions.elementToBeClickable(element));
     }
-
     public static void windowHandles(){
         System.out.println(driver.getWindowHandles());
         Set<String> windowHandles = driver.getWindowHandles();
@@ -95,4 +96,13 @@ public class HelperMethods {
         JavascriptExecutor js = ((JavascriptExecutor) driver);
         js.executeScript("scroll(0, 750);");
     }
+    public static void dropDownMenu(WebElement element){
+        Select select = new Select(element);
+        select.selectByIndex(1);
+    }
+    public static void frame(List<WebElement> element1, WebElement element2){
+        List<WebElement> iframes = element1;
+        driver.switchTo().frame(element2);
+    }
+
 }
