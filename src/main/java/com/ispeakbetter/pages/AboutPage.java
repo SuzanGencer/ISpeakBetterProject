@@ -34,8 +34,7 @@ public class AboutPage {
 
     public static void clickLearningSystemLink(){
         HelperMethods.specificScrollPageDown();
-        HelperMethods.waitForClickability(learningSystemLink);
-        HelperMethods.waitForClickability(learningSystemLink);
+        HelperMethods.waitForVisibility(learningSystemLink);
         HelperMethods.doClick(learningSystemLink);
     }
 
