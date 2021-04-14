@@ -11,7 +11,7 @@ public class AboutPage {
     @FindBy(xpath="//*[@id='mobile-navbar-collapse']/ul/li[3]/a/span")
     public static WebElement aboutBtn;
 
-    @FindBy(xpath = "//*[@id='page']/section[2]/div/div/div[2]/p/strong/a")
+    @FindBy(xpath = "//a[contains(text(),'ISpeakBetter Interactive Learning system')]")
     public static WebElement learningSystemLink;
 
     @FindBy(xpath = "//*[@id='container']/h1/yt-formatted-string")
