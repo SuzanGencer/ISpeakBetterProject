@@ -21,8 +21,8 @@ public class ContactPage {
 
     public static void clickContactPage(){HelperMethods.doClick(clickCP);}
 
-    public static String verifyURL(){
-        return HelperMethods.getCurrentURL();
+    public static String verifyTitle(){
+        return HelperMethods.doGetPageTitle();
     }
 
     @FindBy(name = "name")

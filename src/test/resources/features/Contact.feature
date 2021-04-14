@@ -3,7 +3,7 @@ Feature: Contact part of ISpeakBetter website
   Scenario: Checking of the Contact page url
     Given I am on the Home page for Contact Page
     When I click Contact page
-    Then Check Contact page verify url
+    Then Check Contact page title
 
 
   @contactUsMessage
@@ -18,7 +18,7 @@ Feature: Contact part of ISpeakBetter website
   @scrollUp
   Scenario: Checking of the scroll up part
     Given I am on the Contact page
-    When I go all the way to the 'scroll up' section
+    When I go all the way to the scroll up section
     Then I click scroll up
 
   @chat

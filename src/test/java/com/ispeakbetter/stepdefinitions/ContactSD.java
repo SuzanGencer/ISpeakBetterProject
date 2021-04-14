@@ -1,3 +1,5 @@
+package com.ispeakbetter.stepdefinitions;
+
 import com.ispeakbetter.pages.ContactPage;
 import com.ispeakbetter.utils.HelperMethods;
 import io.cucumber.java.en.And;
@@ -9,17 +11,17 @@ import org.junit.Assert;
 public class ContactSD {
     @Given("I am on the Home page for Contact Page")
     public void HomePage() {
-        String expectedTitle= "Ücretsiz ders alın.Canlı,bire bir İngilizce dersleri. ISpeakBetter";
-        Assert.assertEquals(HelperMethods.doGetPageTitle(),expectedTitle);
+        String expectedURL= "https://ispeakbetter.com/";
+        Assert.assertEquals(expectedURL, HelperMethods.getCurrentURL());
     }
     @When("I click Contact page")
     public void clickContactP(){
         ContactPage.clickContactPage();
     }
-    @Then("Check Contact page verify url")
+    @Then("Check Contact page title")
     public void title(){
-        String expectedURL = "https://ispeakbetter.com/contact";
-        Assert.assertEquals(expectedURL, ContactPage.verifyURL());
+        String expectedTitle = "İngilizceyi akıcı konuşabilmek için bizimle iletişime geçin.";
+        Assert.assertEquals(expectedTitle, ContactPage.verifyTitle());
     }
 
     @Given("I go the Contact page")
@@ -52,7 +54,7 @@ public class ContactSD {
         ContactPage.clickContactPage();
     }
 
-    @When("I go all the way to the {string} section")
+    @When("I go all the way to the scroll up section")
     public void goScrollUpSection() {
         ContactPage.scrollDown();
     }
@@ -64,8 +66,8 @@ public class ContactSD {
 
     @Given("I am on the Home page for Chat")
     public void HomePageForChat() {
-        String expectedTitle= "Learn English with Online Teachers - Get your Free Live English Class Now.";
-        Assert.assertEquals(HelperMethods.doGetPageTitle(),expectedTitle);
+        String expectedURL= "https://ispeakbetter.com/";
+        Assert.assertEquals(expectedURL, HelperMethods.getCurrentURL());
     }
 
     @When("I click Chat button")
@@ -100,8 +102,8 @@ public class ContactSD {
 
     @Given("I am on the Home page for Language menu")
     public void homePageForLanguageMenu() {
-        String expectedTitle= "Learn English with Online Teachers - Get your Free Live English Class Now.";
-        Assert.assertEquals(HelperMethods.doGetPageTitle(),expectedTitle);
+        String expectedURL= "https://ispeakbetter.com/";
+        Assert.assertEquals(expectedURL, HelperMethods.getCurrentURL());
     }
 
     @When("I click Language part")
@@ -114,3 +116,4 @@ public class ContactSD {
         ContactPage.clickSelectLanguage();
     }
 }
+
