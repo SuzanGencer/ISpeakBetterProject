@@ -6,6 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import static com.ispeakbetter.base.BasePage.driver;
+
 public class LoginPage {
 
     @FindBy(xpath = "//a[normalize-space()='Login']")
@@ -19,6 +20,15 @@ public class LoginPage {
 
     @FindBy(id = "cmdSignin")
     public static WebElement loginBtn;
+ 
+    @FindBy(id = "cmdSignin")
+    public static WebElement loginButton;
+  
+    @FindBy(xpath = "//*[@id=\"launch-pad\"]/a")
+    public static WebElement launchPad;
+  
+    @FindBy(id = "dashboard_goodday")
+    public static WebElement dashBoard;
 
 
     public LoginPage() {
@@ -44,6 +54,20 @@ public class LoginPage {
     public static void clickLoginBtn() {
         HelperMethods.doClick(loginBtn);
     }
+   
+    public static String verifyTitle(){
+        return HelperMethods.doGetPageTitle();
+    }
 
+    public static void loginBtn(String email,String password){
+
+        HelperMethods.doClick(signLink);
+        HelperMethods.sendText(emailInput,email);
+        HelperMethods.sendText(passwordInput,password);
+        HelperMethods.doClick(loginButton);
+        WebDriverWait wait = new WebDriverWait(driver, 15);
+        wait.until(ExpectedConditions.visibilityOf(dashBoard));
+    }
 
 }
+
