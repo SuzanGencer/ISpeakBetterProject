@@ -8,7 +8,8 @@ public class PageManager {
     public static AboutPage aboutPage;
     public static CoursePage coursePage;
     public static ContactPage contactPage;
-
+    public static HomePage homepage;
+    public static SignUpPage signUpPage;
 
 
     public static void initialize(){
@@ -17,7 +18,9 @@ public class PageManager {
         aboutPage=new AboutPage();
         coursePage = new CoursePage();
         contactPage = new ContactPage();
+        signUpPage = new SignUpPage();
+        homepage = new HomePage();
+        
 
     }
-
 }
