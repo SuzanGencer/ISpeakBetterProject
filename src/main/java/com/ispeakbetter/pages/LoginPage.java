@@ -61,9 +61,9 @@ public class LoginPage {
 
     public static void loginBtn(String email,String password){
 
-        HelperMethods.doClick(signLink);
-        HelperMethods.sendText(emailInput,email);
-        HelperMethods.sendText(passwordInput,password);
+        HelperMethods.doClick(loginLink);
+        HelperMethods.sendText(username,email);
+        HelperMethods.sendText(password,password);
         HelperMethods.doClick(loginButton);
         WebDriverWait wait = new WebDriverWait(driver, 15);
         wait.until(ExpectedConditions.visibilityOf(dashBoard));
