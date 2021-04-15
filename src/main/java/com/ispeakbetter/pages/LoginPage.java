@@ -11,7 +11,7 @@ import static com.ispeakbetter.base.BasePage.driver;
 
 public class LoginPage {
 
-    @FindBy(xpath = "//a[normalize-space()='Login']")
+    @FindBy(id = "cmdSiginLink")
     public static WebElement loginLink;
 
     @FindBy(id = "_email")

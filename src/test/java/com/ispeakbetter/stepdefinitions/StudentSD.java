@@ -19,7 +19,7 @@ public class StudentSD {
     public void IAmOnTheStudentPage() {
         //LoginPage.loginBtn(ConfigReader.getProperty("email"),ConfigReader.getProperty("password"));
         LoginPage.clickLoginLink();
-        LoginPage.enterUserName(ConfigReader.getProperty("email"));
+        LoginPage.enterUserName(ConfigReader.getProperty("username"));
         LoginPage.enterPassword(ConfigReader.getProperty("password"));
         LoginPage.clickLoginBtn();
     }
