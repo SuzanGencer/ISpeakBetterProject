@@ -4,6 +4,8 @@ import com.ispeakbetter.utils.HelperMethods;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static com.ispeakbetter.base.BasePage.driver;
 
@@ -54,20 +56,7 @@ public class LoginPage {
     public static void clickLoginBtn() {
         HelperMethods.doClick(loginBtn);
     }
-   
-    public static String verifyTitle(){
-        return HelperMethods.doGetPageTitle();
-    }
 
-    public static void loginBtn(String email,String password){
-
-        HelperMethods.doClick(loginLink);
-        HelperMethods.sendText(username,email);
-        HelperMethods.sendText(password,password);
-        HelperMethods.doClick(loginButton);
-        WebDriverWait wait = new WebDriverWait(driver, 15);
-        wait.until(ExpectedConditions.visibilityOf(dashBoard));
-    }
 
 }
 

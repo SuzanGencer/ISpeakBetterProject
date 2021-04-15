@@ -17,7 +17,11 @@ import static com.ispeakbetter.base.BasePage.driver;
 public class StudentSD {
     @Given("I am on the student page")
     public void IAmOnTheStudentPage() {
-        LoginPage.loginBtn(ConfigReader.getProperty("email"),ConfigReader.getProperty("password"));
+        //LoginPage.loginBtn(ConfigReader.getProperty("email"),ConfigReader.getProperty("password"));
+        LoginPage.clickLoginLink();
+        LoginPage.enterUserName(ConfigReader.getProperty("email"));
+        LoginPage.enterPassword(ConfigReader.getProperty("password"));
+        LoginPage.clickLoginBtn();
     }
 
     @When("click dictionary button")
